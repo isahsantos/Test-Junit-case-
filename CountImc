@@ -1,0 +1,47 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ciclomatica;
+
+/**
+ *
+ * @author Isabela
+ */
+public class CountImc {
+
+   public static String countImc(interfaceCiclomatica imc) {
+        String condicao;
+        double calculo = imc.getPeso() / Math.pow(imc.getAltura(), 2);
+
+        if (imc.getSexo().equals("M")) {
+            if (calculo < 20.7) {
+                condicao = "Abaixo do peso";
+            } else if (calculo <= 26.4) {
+                condicao = "No peso normal";
+            } else if (calculo <= 27.8) {
+                condicao = "Marginalmente acima do peso";
+            } else if (calculo <= 31.1) {
+                condicao = "Acima do peso ideal";
+            } else {
+                condicao = "Obeso";
+            }
+        } else {
+            if (calculo < 19.1) {
+                condicao = "Abaixo do peso";
+            } else if (calculo <= 25.8) {
+                condicao = "No peso normal";
+            } else if (calculo <= 27.3) {
+                condicao = "Marginalmente acima do peso";
+            } else if (calculo <= 32.3) {
+                condicao = "Acima do peso ideal";
+            } else {
+                condicao = "Obeso";
+            }
+        }
+
+        return condicao;
+    }
+    
+}
